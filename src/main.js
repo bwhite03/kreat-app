@@ -14,15 +14,14 @@ const copy = promisify(ncp);
 const writeFile = promisify(fs.writeFile);
 const writeGitIgnore = promisify(gitignore.writeFile);
 
-function initGit(options) {
+async function initGit(options) {
   const result = execa('git', ['init'], {
     cwd: options.targetDirectory,
   });
   if (result.failed) {
     return Promise.reject(new Error('Failed to initialize Git'));
-  } else {
-    return;
   }
+  return;
 }
 
 async function createGitIgnore(options) {
@@ -71,7 +70,7 @@ export async function createProject(options) {
   try {
     await access(templateDir, fs.constants.R_OK);
   } catch (error) {
-    console.error('%s Invalid template name');
+    console.error('Invalid template name');
     process.exit(1);
   }
   const tasks = new Listr([
@@ -106,5 +105,5 @@ export async function createProject(options) {
     },
   ]);
   await tasks.run();
-  console.log('%s Project ready');
+  console.log('Project ready');
 }

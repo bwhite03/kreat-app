@@ -73,7 +73,7 @@ async function promptForMissingOptions(options) {
     ...options,
     template: options.template || answers.template,
     git: options.git || answers.gitt,
-    runInstall: options.runInstall,
+    runInstall: options.runInstall || answers.runInstall,
   };
 }
 
