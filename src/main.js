@@ -8,6 +8,7 @@ import { projectInstall } from 'pkg-install';
 import license from 'spdx-license-list/licenses/MIT';
 import gitignore from 'gitignore';
 import Listr from 'listr';
+import { success } from './colors';
 
 const access = promisify(fs.access);
 const copy = promisify(ncp);
@@ -64,7 +65,7 @@ export async function createProject(options) {
     '../../templates',
     options.template.toLowerCase()
   );
-  console.log('templateDir', templateDir);
+  success('templateDir' + templateDir);
   options.templateDirectory = templateDir;
 
   try {
@@ -105,5 +106,5 @@ export async function createProject(options) {
     },
   ]);
   await tasks.run();
-  console.log('Project ready');
+  sucess('Project ready');
 }

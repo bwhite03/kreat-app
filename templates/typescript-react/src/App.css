@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.mc-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.mc-contents {
+  background-color: #121212;
+  color: rgba(194, 187, 187);
+  height: 100%;
+}

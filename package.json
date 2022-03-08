@@ -1,6 +1,6 @@
 {
-  "name": "kreat-app",
-  "version": "0.0.2",
+  "name": "typescript-library",
+  "version": "0.0.1",
   "description": "a cli to create apps",
   "main": "src/index.js",
   "bin": {
